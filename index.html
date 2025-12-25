@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://logik101.github.io/microF/icononly_transparent_nobuffer.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroFormS - Microfinance & Innovation</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E40AF",
+              secondary: "#1E3A8A",
+              accent: "#F59E0B",
+              light: "#F3F4F6",
+              dark: "#111827"
+            }
+          }
+        }
+      };
+    </script>
+
+    <script type="module" src="/index.tsx"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
