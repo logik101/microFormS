@@ -27,7 +27,7 @@ This is the blog content rendered by the app.
       "content": "Nous avons formé plus de 500 personnes l'année dernière. Le résultat est clair : l'éducation financière est la clé du succès durable."
     },
     {
-      "id": "post-3-help",
+      "id": "post-4",
       "title": "Post 3",
       "publicationDate": "2025-12-25",
       "readTimeMinutes": 1,
