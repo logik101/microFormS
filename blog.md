@@ -38,4 +38,5 @@ This is the blog content rendered by the app.
     }
   ]
 }
+```
 <!-- /POSTS -->
