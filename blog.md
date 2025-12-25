@@ -1,6 +1,7 @@
 # MicroForms Blog
 
 This is the blog content rendered by the app.
+
 <!-- POSTS -->
 ```json
 {
@@ -25,16 +26,16 @@ This is the blog content rendered by the app.
       "description": "Comment nos programmes de formation ont aidé les entrepreneurs locaux à stabiliser leurs revenus.",
       "content": "Nous avons formé plus de 500 personnes l'année dernière. Le résultat est clair : l'éducation financière est la clé du succès durable."
     },
-{
-      "id": "impact-haiti-2023",
+    {
+      "id": "post-3-help",
       "title": "Post 3",
-      "publicationDate": "2025-12-2025",
+      "publicationDate": "2025-12-25",
       "readTimeMinutes": 1,
       "author": "Admin",
       "imageUrl": "https://logik101.github.io/microF/b2.avif",
-      "description": "Comment on peut vous aider."
+      "description": "Comment on peut vous aider.",
+      "content": "### Comment nous aider\n\nVoici comment notre plateforme peut soutenir votre activité et renforcer votre impact."
     }
-
   ]
 }
 <!-- /POSTS -->
