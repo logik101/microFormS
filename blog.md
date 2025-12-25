@@ -35,6 +35,16 @@ This is the blog content rendered by the app.
       "imageUrl": "https://logik101.github.io/microF/b2.avif",
       "description": "Comment on peut vous aider.",
       "content": "### Comment nous aider\n\nVoici comment notre plateforme peut soutenir votre activité et renforcer votre impact."
+    },
+{
+      "id": "post-3-help",
+      "title": "Post 4",
+      "publicationDate": "2025-12-25",
+      "readTimeMinutes": 1,
+      "author": "Gg",
+      "imageUrl": "[https://logik101.github.io/microF/b2.avif](https://blog.credgenics.com/wp-content/uploads/2023/07/future-financial-technology-controll-by-ai-robot-huminoid-uses-machine-learning-min-scaled-2.jpg)",
+      "description": "AI in Finance.",
+      "content": "Artificial intelligence (AI) in finance uses technologies like machine learning and natural language processing to automate processes, enhance decision-making, and personalize customer interactions. This has driven significant investment, with projected spending in the financial services sector expected to reach $97 billion by 2027"
     }
   ]
 }
