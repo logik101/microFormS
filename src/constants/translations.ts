@@ -687,9 +687,9 @@ export const translations: Translations = {
     [Language.HT]: "Ofisye Pwojè ak Rechèch",
   },
   ginelDesc: {
-    [Language.FR]: "  | Ph.D. en Informatique (Intelligence Artificielle) de l'Université Paul Sabatier, France. Scientifique de recherche passionné par l'IA, axé sur l'utilisation de l'intelligence artificielle pour résoudre des problèmes mondiaux complexes.",
-    [Language.EN]: '| Ph.D. in Computer Science (Artificial Intelligence) from Paul Sabatier University, France. Passionate AI Research Scientist focused on using artificial intelligence to solve complex global problems.',
-    [Language.HT]: " | Ph.D. nan Syans Enfòmatik (Entèlijans Atifisyèl) nan Inivèsite Paul Sabatier, Lafrans. Syantis Rechèch pasyone nan IA, ki konsantre sou itilizasyon entèlijans atifisyèl pou rezoud pwoblèm konplèks mondyal.",
+    [Language.FR]: "Ph.D. en Informatique (Intelligence Artificielle) de l'Université Paul Sabatier, France. Scientifique de recherche passionné par l'IA, axé sur l'utilisation de l'intelligence artificielle pour résoudre des problèmes mondiaux complexes.",
+    [Language.EN]: 'Ph.D. in Computer Science (Artificial Intelligence) from Paul Sabatier University, France. Passionate AI Research Scientist focused on using artificial intelligence to solve complex global problems.',
+    [Language.HT]: " Ph.D. nan Syans Enfòmatik (Entèlijans Atifisyèl) nan Inivèsite Paul Sabatier, Lafrans. Syantis Rechèch pasyone nan IA, ki konsantre sou itilizasyon entèlijans atifisyèl pou rezoud pwoblèm konplèks mondyal.",
   },
 
   // Formations Page
