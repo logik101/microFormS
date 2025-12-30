@@ -11,7 +11,7 @@ This is the blog content rendered by the app.
       "title": "Les Tendances de la Microfinance en 2024",
       "publicationDate": "2024-05-20",
       "readTimeMinutes": 6,
-      "author": "Johnson Occin",
+      "author": "JO",
       "imageUrl": "https://logik101.github.io/microF/b1.avif",
       "description": "Une analyse approfondie des nouvelles tendances qui façonnent le secteur de la microfinance cette année.",
       "content": "### Introduction\n\nLe paysage de la microfinance change rapidement. Avec l'arrivée de nouvelles technologies, les institutions doivent s'adapter.\n\n### Points Clés\n\n1. **Digitalisation** : Plus de services mobiles.\n2. **IA** : Meilleure gestion du risque de crédit.\n3. **Inclusion** : Toucher les zones les plus reculées.\n\nMerci de nous avoir lu !"
