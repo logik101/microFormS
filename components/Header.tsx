@@ -94,7 +94,7 @@ const Header: React.FC = () => {
         const content = Object.values(translations[item.contentKey] || {}).join(' ').toLowerCase();
         return title.includes(lowerCaseQuery) || content.includes(lowerCaseQuery);
       });
-      setSuggestions(filtered.slice(0, 10));
+      setSuggestions(filtered.slice(0, 10)); // Limit suggestions
     } else {
       setSuggestions([]);
     }
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
       navigate(`/search?q=${searchQuery}`);
       setSearchQuery('');
       setSuggestions([]);
-      setIsSearchOpen(false);
+      setIsSearchOpen(false); // Close mobile search on submit
     }
   };
 
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
   };
 
   const handleSuggestionClick = () => {
-    setTimeout(() => {
+    setTimeout(() => { // Timeout to allow navigation to complete
       clearSearch();
     }, 100);
   };
@@ -130,65 +130,136 @@ const Header: React.FC = () => {
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
     `block py-2 px-4 rounded-md text-base font-medium transition-colors duration-300 ${
-      isActive ? 'bg-primary text-white' : 'text-gray-700 hover:bg-light'
+      isActive
+        ? 'bg-primary text-white'
+        : 'text-gray-700 hover:bg-light'
     }`;
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50" ref={searchContainerRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <NavLink to="/">
-            <img
-              className="h-10 sm:h-12 w-auto"
-              src="https://logik101.github.io/microF/fulllogo_transparent_nobuffer.png"
-              alt="MicroFormS Logo"
-            />
-          </NavLink>
+          <div className="flex items-center">
+            <NavLink to="/">
+              <img className="h-10 sm:h-12 w-auto" src="https://logik101.github.io/microF/fulllogo_transparent_nobuffer.png" alt="MicroFormS Logo" />
+            </NavLink>
+          </div>
 
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <NavLink to="/" className={navLinkClass}>{t('navHome')}</NavLink>
-            <NavLink to="/formations" className={navLinkClass}>{t('navFormations')}</NavLink>
+            <NavLink to="/" className={navLinkClass}>
+              {t('navHome')}
+            </NavLink>
+            <NavLink to="/formations" className={navLinkClass}>
+              {t('navFormations')}
+            </NavLink>
 
-            <a href={EXTERNAL_BLOG_URL} className="py-2 px-4 text-base font-semibold text-gray-700 hover:text-primary">
+            {/* Blog goes to external site */}
+            <a
+              href={EXTERNAL_BLOG_URL}
+              className="py-2 px-4 rounded-md text-base font-semibold transition-colors duration-300 text-gray-700 hover:text-primary"
+            >
               {t('navBlog')}
             </a>
 
-            <NavLink to="/about" className={navLinkClass}>{t('navAbout')}</NavLink>
+            <NavLink to="/about" className={navLinkClass}>
+              {t('navAbout')}
+            </NavLink>
+
+            <div className="relative">
+              <form onSubmit={handleSearchSubmit}>
+                <input
+                  type="search"
+                  name="search"
+                  placeholder={t('searchPlaceholder')}
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="w-32 lg:w-48 xl:w-64 bg-light h-10 px-5 pr-10 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+                />
+                <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+                  <SearchIcon />
+                </button>
+              </form>
+              {suggestions.length > 0 && (
+                <SearchSuggestions suggestions={suggestions} onSuggestionClick={handleSuggestionClick} />
+              )}
+            </div>
+
             <LanguageSwitcher />
           </div>
 
           <div className="md:hidden flex items-center">
+            <button
+              onClick={() => {
+                setIsSearchOpen(!isSearchOpen);
+                setIsMenuOpen(false);
+              }}
+              className="p-2 rounded-md text-gray-700 hover:text-primary"
+              aria-label="Toggle search"
+            >
+              <SearchIcon />
+            </button>
             <LanguageSwitcher />
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="ml-2 p-2 rounded-md text-gray-700"
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+                setIsSearchOpen(false);
+              }}
+              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              aria-expanded={isMenuOpen}
             >
+              <span className="sr-only">Open main menu</span>
               {isMenuOpen ? <XIcon /> : <MenuIcon />}
             </button>
           </div>
         </div>
       </div>
 
+      {isSearchOpen && (
+        <div className="md:hidden px-4 pb-3">
+          <div className="relative text-gray-600">
+            <form onSubmit={handleSearchSubmit}>
+              <input
+                type="search"
+                name="search"
+                placeholder={t('searchPlaceholder')}
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="w-full bg-light h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+              />
+              <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+                <SearchIcon />
+              </button>
+            </form>
+            {suggestions.length > 0 && (
+              <SearchSuggestions suggestions={suggestions} onSuggestionClick={handleSuggestionClick} />
+            )}
+          </div>
+        </div>
+      )}
+
       {isMenuOpen && (
-        <div className="md:hidden px-2 pb-3 space-y-1">
-          <NavLink to="/" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
-            {t('navHome')}
-          </NavLink>
-          <NavLink to="/formations" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
-            {t('navFormations')}
-          </NavLink>
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <NavLink to="/" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
+              {t('navHome')}
+            </NavLink>
+            <NavLink to="/formations" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
+              {t('navFormations')}
+            </NavLink>
 
-          <a
-            href={EXTERNAL_BLOG_URL}
-            className="block py-2 px-4 text-base font-medium text-gray-700 hover:bg-light rounded-md"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('navBlog')}
-          </a>
+            {/* Blog goes to external site */}
+            <a
+              href={EXTERNAL_BLOG_URL}
+              className="block py-2 px-4 rounded-md text-base font-medium transition-colors duration-300 text-gray-700 hover:bg-light"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('navBlog')}
+            </a>
 
-          <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
-            {t('navAbout')}
-          </NavLink>
+            <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
+              {t('navAbout')}
+            </NavLink>
+          </div>
         </div>
       )}
     </header>
