@@ -154,12 +154,15 @@ const Header: React.FC = () => {
             </NavLink>
 
             {/* Blog goes to external site */}
-            <a
-              href={EXTERNAL_BLOG_URL}
-              className="py-2 px-4 rounded-md text-base font-semibold transition-colors duration-300 text-gray-700 hover:text-primary"
-            >
-              {t('navBlog')}
-            </a>
+           <a
+  href={EXTERNAL_BLOG_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="py-2 px-4 rounded-md text-base font-semibold transition-colors duration-300 text-gray-700 hover:text-primary"
+>
+  {t('navBlog')}
+</a>
+
 
             <NavLink to="/about" className={navLinkClass}>
               {t('navAbout')}
