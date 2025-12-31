@@ -1,4 +1,3 @@
-
 import { BlogArticle } from '../types';
 
 export const blogArticles: BlogArticle[] = [
@@ -31,5 +30,16 @@ export const blogArticles: BlogArticle[] = [
         tagsKey: 'blogTagsExpertise',
         date: '3/8/2025',
         readTimeKey: 'readTime1min',
-    }
+    },
+    {
+        id: 4,
+        imageUrl:
+            'https://drive.google.com/file/d/1kmDiezag-0LSz_giJzdS0okOWndMXOFV/view?usp=drive_link',
+        titleKey: 'blogTitleSupport',
+        descriptionKey: 'blogDescSupport',
+        contentKey: 'blogContentSupport',
+        tagsKey: 'blogTagsSupport',
+        date: '12/31/2025',
+        readTimeKey: 'readTime5minSupport',
+    },
 ];
