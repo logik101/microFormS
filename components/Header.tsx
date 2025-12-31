@@ -252,12 +252,15 @@ const Header: React.FC = () => {
 
             {/* Blog goes to external site */}
             <a
-              href={EXTERNAL_BLOG_URL}
-              className="block py-2 px-4 rounded-md text-base font-medium transition-colors duration-300 text-gray-700 hover:bg-light"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('navBlog')}
-            </a>
+  href={EXTERNAL_BLOG_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block py-2 px-4 rounded-md text-base font-medium transition-colors duration-300 text-gray-700 hover:bg-light"
+  onClick={() => setIsMenuOpen(false)}
+>
+  {t('navBlog')}
+</a>
+
 
             <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsMenuOpen(false)}>
               {t('navAbout')}
